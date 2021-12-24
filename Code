@@ -1,0 +1,25 @@
+#define LDR A0
+#define led D5
+ 
+ 
+void setup() {
+  Serial.begin(115200);
+  pinMode(led, OUTPUT);
+  delay(100);
+ 
+}
+ 
+void loop() {
+  int light = analogRead(A0);
+  if(light <150)
+  {
+    digitalWrite(led, HIGH);
+  }
+  else
+  {
+    digitalWrite(led, LOW);
+  }
+  Serial.println(light);
+  delay(150);
+ 
+}
